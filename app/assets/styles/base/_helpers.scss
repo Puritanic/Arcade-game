@@ -1,0 +1,56 @@
+// -----------------------------------------------------------------------------
+// This file contains CSS helper classes.
+// -----------------------------------------------------------------------------
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  max-width: $max-width; /* 1 */
+  margin-left: auto; /* 2 */
+  margin-right: auto; /* 2 */
+  padding-left: 20px; /* 3 */
+  padding-right: 20px; /* 3 */
+  width: 100%; /* 1 */
+}
+
+.h {
+  &__center-text {
+    text-align: center !important;
+  }
+
+  &__mb--big {
+    margin-bottom: 8rem !important;
+
+    @include respond(tab-port) {
+      margin-bottom: 5rem !important;
+    }
+  }
+
+  &__mb--medium {
+    margin-bottom: 4rem !important;
+
+    @include respond(tab-port) {
+      margin-bottom: 3rem !important;
+    }
+  }
+
+  &__mb--small {
+    margin-bottom: 1.5rem !important;
+  }
+
+  &__mt--big {
+    margin-top: 8rem !important;
+  }
+
+  &__mt--medium {
+    margin-top: 4rem !important;
+  }
+
+  &__mt--small {
+    margin-top: 1.5rem !important;
+  }
+}

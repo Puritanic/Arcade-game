@@ -1,0 +1,52 @@
+:root {
+  --font-size-base: 10px;
+  --line-height-base: 150%;
+  --font-primary: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue',
+    'Helvetica', 'Arial', sans-serif;
+  --font-code: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
+    'Monaco', monospace;
+  --font-monospace: 'Inconsolata', 'Menlo', 'Consolas',
+    'Bitstream Vera Sans Mono', 'Courier', monospace;
+
+  --font-weight-light: 100;
+  --font-weight-normal: 300;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+}
+
+// Scaling font size from h4 to h1
+$scale: 1.25 !default;
+
+// $base-font-size
+$font-size-base: 10px !default;
+$font-size-medium: ceil(($font-size-base * $scale)) !default;
+$font-size-large: ceil(($font-size-base * $scale * 1.5)) !default;
+$font-size-small: ceil(($font-size-base / $scale)) !default;
+
+// $line-height
+$line-height-base: 1 !default;
+$line-height-medium: 1.6 !default;
+$line-height-large: 1.8 !default;
+$line-height-small: 1.5 !default;
+
+// Round a number down
+$line-height-count: floor(($font-size-base * $line-height-base)) !default;
+
+// font family
+$font-family-fallback: 'Arial', sans-serif;
+$font-family-open: 'industry', sans-serif, $font-family-fallback;
+$font-family-base: $font-family-open;
+$font-family-second: $font-family-open;
+
+@if variable-exists(typefaces) {
+  @each $file, $option in $typefaces {
+    @font-face {
+      font-family: map-get(map-get($typefaces, $file), family);
+      font-style: map-get(map-get($typefaces, $file), style);
+      font-weight: map-get(map-get($typefaces, $file), weight);
+      src: url('../fonts/#{$file}.ttf') format('truetype'),
+        url('../fonts/#{$file}.woff') format('woff'),
+        url('../fonts/#{$file}.woff2') format('woff2');
+    }
+  }
+}
