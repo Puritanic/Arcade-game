@@ -1,13 +1,65 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Effective JavaScript: Frogger</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Effective JavaScript: Frogger</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-    <script src="js/resources.js"></script>
-    <script src="js/app.js"></script>
-    <script src="js/engine.js"></script>
+  <!--Modal. Source code from  https://codepen.io/bradtraversy/pen/zEOrPp ,with modifications.-->
+  <div id="gameOverModal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <h2>Game over :( </h2>
+      </div>
+      <h3>Click to start a new game!</h3>
+    </div>
+  </div>
+  <div id="winningModal" class="modal">
+    <div class="modal__content">
+      <div class="modal__header">
+        <span>
+          <img src="./images/Star.png" alt="star">
+          <img src="./images/Star.png" alt="star">
+          <img src="./images/Star.png" alt="star">
+        </span>
+        <h2>Congratulations!You won!</h2>
+        <span>
+          <img src="./images/Star.png" alt="star">
+          <img src="./images/Star.png" alt="star">
+          <img src="./images/Star.png" alt="star">
+        </span>
+      </div>
+      <h3>Press click to start a new game!</h3>
+    </div>
+  </div>
+  <div class="container">
+    <div class="info">
+      <h3 class="score">Score:&emsp;
+        <span id="points">000</span>
+      </h3>
+      <ul class="lives">
+
+        <li>
+          <img src="./images/Heart.png" alt="heart">
+        </li>
+        <li>
+          <img src="./images/Heart.png" alt="heart">
+        </li>
+        <li>
+          <img src="./images/Heart.png" alt="heart">
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <script src="js/resources.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/engine.js"></script>
 </body>
+
 </html>

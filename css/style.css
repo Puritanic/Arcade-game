@@ -1,3 +1,86 @@
 body {
-    text-align: center;
+  text-align: center;
+  position: relative;
+  background: #f7971e; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #ffd200,
+    #f7971e
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.container {
+  max-width: 42%;
+  margin: 2% auto;
+}
+
+.info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#points {
+  font-size: 2rem;
+  letter-spacing: 2px;
+}
+
+.lives {
+  height: 3rem;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+img {
+  width: 3rem;
+}
+
+.modal {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__content {
+  background-color: #ccc;
+  width: 600px;
+  padding: 3rem;
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+  border: 2px solid black;
+  animation-name: modalFadeIn;
+  animation-duration: 1s;
+}
+
+.modal__content h3 {
+  text-align: center;
+  border: 2px solid black;
+  width: 50%;
+  margin: 1rem auto;
+  cursor: pointer;
+}
+
+.modal__header {
+  background: #e9e9e9;
+  padding: 15px;
+}
+
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
